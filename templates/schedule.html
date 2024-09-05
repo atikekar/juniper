@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JUNIPER</h1>
+
+<p>Enter your schedule</p>
+
+<form id="scheduleForm" action="/submit" method="POST">
+
+    <label for="desc">Description</label><br>
+    <input type="text" id="desc" name="desc"><br>
+    <label for="start">Start Time</label><br>
+    <input type="text" id="start" name="start"><br>
+    <label for="end">End Time</label><br>
+    <input type="text" id="end" name="end"><br><br> 
+
+</form>
+
+<script> 
+    function addCommitment() { 
+        // Create a new div to hold the new input fields
+        var newDiv = document.createElement('div');
+        newDiv.classList.add('commitment');  // Add a class for easy identification
+        
+        // Create a new input field for description
+        var newDescLabel = document.createElement('label');
+        newDescLabel.setAttribute('for', 'desc');
+        newDescLabel.innerText = 'Description\n';
+        var newDescInput = document.createElement('input');
+        newDescInput.setAttribute('type', 'text');
+        newDescInput.setAttribute('name', 'desc');
+        
+        // Create a new input field for start time
+        var newStartLabel = document.createElement('label');
+        newStartLabel.setAttribute('for', 'start');
+        newStartLabel.innerText = 'Start Time\n';
+        var newStartInput = document.createElement('input');
+        newStartInput.setAttribute('type', 'text');
+        newStartInput.setAttribute('name', 'start');
+        
+        // Create a new input field for end time
+        var newEndLabel = document.createElement('label');
+        newEndLabel.setAttribute('for', 'end');
+        newEndLabel.innerText = 'End Time\n';
+        var newEndInput = document.createElement('input');
+        newEndInput.setAttribute('type', 'text');
+        newEndInput.setAttribute('name', 'end');
+        
+        // Append the new fields to the div
+        newDiv.appendChild(newDescLabel);
+        newDiv.appendChild(newDescInput);
+        newDiv.appendChild(document.createElement('br'));
+        newDiv.appendChild(newStartLabel);
+        newDiv.appendChild(newStartInput);
+        newDiv.appendChild(document.createElement('br'));
+        newDiv.appendChild(newEndLabel);
+        newDiv.appendChild(newEndInput);
+        newDiv.appendChild(document.createElement('br'));
+        newDiv.appendChild(document.createElement('br'));
+        
+        // Append the new div to the form
+        document.getElementById('scheduleForm').appendChild(newDiv);
+    }
+
+    function removeCommitment() {
+        // Select all elements with the class 'commitment'
+        var commitments = document.getElementsByClassName('commitment');
+        
+        // Check if there are any commitments to remove
+        if (commitments.length > 0) {
+            // Remove the last commitment div
+            var lastCommitment = commitments[commitments.length - 1];
+            lastCommitment.parentNode.removeChild(lastCommitment);
+        }
+    }
+</script>
+
+<button type="button" onclick="addCommitment()">Add Commitment</button><br><br> 
+<button type="button" onclick="removeCommitment()">Remove Commitment</button><br><br> 
+<input type="submit" value="Submit Schedule">
+
+</body>
+</html>
