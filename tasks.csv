@@ -1,0 +1,14 @@
+Description, Duration (minutes), Priority(scale of 1-5), After(24h time), By(24h time)
+Go to the gym, 120, 5, 3:00, N
+Email professor, 15, 5, 2:00, 9:00
+Go to target, 60, 2, 10:00, 22:00
+Take a nap, 30, 4, 3:00, N
+Work on driver, 360, 1, N, N
+Buy coachella tickets, 15, 2, N, N
+Read textbook chapter, 45, 4, 8:00, 11:00
+Prepare lunch, 30, 3, 11:00, 12:00
+Attend lecture, 90, 5, 9:00, N
+Work on project, 180, 3, 14:00, 18:00
+Complete assignment, 120, 4, 16:00, N
+Call family, 20, 5, 19:00, 20:00
+Go grocery shopping, 60, 3, 17:00, 21:00
